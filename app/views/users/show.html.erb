@@ -15,3 +15,12 @@
       <%= f.text_area :body %>
     <%= f.submit 'Create Book' %>
   <% end %>
+  
+  <h2>Books</h2>
+  <% @books.each do |book| %>
+  <div>
+   <p><%= image_tag @user.get_profile_image(100,100) %></p>
+   <p>Title:<%= book.title %></p>
+   <p>Opinion:<%= book.body %></p>
+  </div>
+  <% end %>

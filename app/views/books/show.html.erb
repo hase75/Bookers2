@@ -1,2 +1,25 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+ <h2>User info</h2>
+ <h6>画像</h6>
+  <%= image_tag @user.get_profile_image(100,100) %>
+ <h6>name</h6>
+  <%= @user.name %>
+ <h6>introduction</h6>
+  <%= @user.introduction %>
+
+
+<h2>New book</h2>
+  <%= form_with model: @book do |f| %>
+    <p>Title</p>
+      <%= f.text_field :title %>
+    <p>Opinion</p>
+      <%= f.text_area :body %>
+    <%= f.submit 'Create Book' %>
+  <% end %>
+ 
+ <h2>Book detail</h2>
+  <%= image_tag @user.get_profile_image(100,100) %>
+ <p>Title</p>
+  <%= @book.title %>
+ <p>Opinion</p>
+  <%= @book.body %>
+
