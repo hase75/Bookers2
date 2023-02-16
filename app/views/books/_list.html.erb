@@ -9,12 +9,17 @@
         <tbody>
          <tr>
 	         <th>name</th>
-	         <%= user.name %>
+	         <%= user.name %>R
          </tr>
          <tr>
 	         <th>introduction</th>
 	         <%= user.introduction %>
-         </tr>
+         </tr
+         <div class="row">
+          <% if @user == current_user %>
+           <p><%= link_to "プロフィール編集",edit_user_path(@user) %></p>
+          <% end %>
+         </div>
         </tbody>
       </table>
 
