@@ -1,20 +1,4 @@
-<h2>User info</h2>
- <h6>画像</h6>
-  <%= image_tag @user.get_profile_image(100,100) %>
- <h6>name</h6>
-  <%= @user.name %>
- <h6>introduction</h6>
-  <%= @user.introduction %>
-
-
-<h2>New book</h2>
-  <%= form_with model: @book do |f| %>
-    <p>Title</p>
-      <%= f.text_field :title %>
-    <p>Opinion</p>
-      <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
-  <% end %>
+<%= render 'books/list', user: @user, book: @book %>
 
  <h2>Users</h2>
   <% @users.each do |user| %>
