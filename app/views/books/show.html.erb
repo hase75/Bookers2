@@ -7,8 +7,15 @@
           <table class="table">
             <tbody>
               <tr>
-                <td><%= image_tag @user.get_profile_image(100,100) %></td>
-                <td><%= @each_book.title %></td>
+                <td><%= link_to user_path(@user.id) do %>
+                     <%= image_tag @user.get_profile_image(100,100) %>
+                     <br><%= @user.name %>
+                    <% end %>
+                </td>
+                <td><%= link_to book_path(@each_book.id) do %>
+                    <%= @each_book.title %>
+                    <% end %>
+                </td>
                 <td><%= @each_book.body %></td>
               </tr>
             </tbody>
